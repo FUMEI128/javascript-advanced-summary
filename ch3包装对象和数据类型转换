@@ -1,0 +1,33 @@
+包装对象和数据类型转换
+一，包装对象
+1，在处理字符串，数字，布尔值属性时创建的临时对象，主要是用来处理属性的引用的，属性引用结束后，包装对象就会销毁。
+
+2，包装类型和引用类型的区别
+最主要的区别对象的生存期
+
+二，数据类型转换
+1，转换为Object类型
+----对象转换为自身
+---undefined和null转换为空对象
+---string/number/boolean转换为包装对象
+
+2，Object转换为Number
+1)先调用valueOf（)对象，结果为原始值，返回
+2）再调用toString（）方法，结果为原始值，返回
+
+3，Object转换为String
+1）先调用toString（）方法，结果为原始值，返回
+2）再调用vlaueOf()方法，结果为原始值，返回
+
+3，Object转换为Boolean
+任意对象转换为布尔值为true，包括空对象。
+除false 0 "" null undefined NaN其余皆为真值。
+
+分为两类：undefined null为一类，其余为一类。
+1）同类之间undefined==null结果为true;
+
+String==Boolean,需要转换为Number来比较
+String/Boolean==Number需要String/Boolean转换为Number.
+
+
+
