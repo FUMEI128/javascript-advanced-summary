@@ -1,0 +1,29 @@
+原型链
+一，属性访问机制
+实例对象继承原型对象的属性，（__proto__属性指向了原型对象）直接可以访问这些属性，好像拥有这些属性。
+对象访问属性的时候，js首先从本对象查找，然后是原型。原型的原型。
+
+二，属性分类
+自有属性和继承属性（原型链上查找的属性）
+1，检测属性
+obj.hasOwnProperty(属性名)该方法时在Object的prototype中，所有的实例对象都可以访问
+Object.getOwnPropertyNames(obj)返回要查找的属性名（所有的自身属性名包括不可枚举属性）
+属性名 in obj在原型链上找是否有该属性
+
+三，原型链
+只要是对象都有__proto__属性，没有prototype属性
+只要是函数都有prototype属性，也具有__proto__属性
+Function.prototype是例外，虽然是函数，但是不具有prototype属性
+
+原型链必备知识点总结：
+1，构造器函数（new出来的）都是通过Function创建出来的，比如Object,Function（它自己也属于构造器函数）
+2，普通对象是通过Object创建的
+3，函数本质也是对象，只不过比较特殊
+3，Function.prototype是函数的起源（子函数都可以共享原型对象中的方法或属性），Object.prototype是对象的起源（普通子对象是通过Objecth创建的，生成的子对象也能共享原型对象中的方法和属性）
+
+四，数据类型检测
+1，我们常用的是typeof来检测数据类型，当遇到null或其他对象时，用typeof检测返回值为object，此时无法区分
+2，利用constructor属性来区分对象
+3，引进instanceof方法，用于检测构造器函数的protype属性是否在某一个实例对象上，放回值为布尔值
+4,toString方法在Object.protype对象上，大部分的对象可以访问它，通过call/apply来借用Object.protype上的toString方法，放回调用者的类型的字符串，格式为[object xxx]
+xxx是调用者的数据类型
