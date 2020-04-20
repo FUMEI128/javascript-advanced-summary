@@ -1,0 +1,27 @@
+
+一，构造器
+Number,Boolean,String,Function,Object,Date:基本数据类型对应的包装对象
+当访问基本数据类型属性或方法时创建临时的包装对象。
+
+二，主要的知识点
+1，Function中：
+静态属性：length,name
+常见的原型方法：apply,bind,call,toString
+
+2,Object
+静态方法：
+Object.defineProperties(obj,props)//在对象obj上添加属性和它对应的属性描述符
+Object.getPrototypeOf(obj)//获得某一个对象的原型链
+Object.getOwnPropertyDescriptor(obj,attr)//返回obj对象的指定的属性attr上的属性描述符
+原型方法：Object.prototype.hasOwnProperty()/检测某一个属性是不是自有属性
+
+3，Date对象
+Date构造器方法（静态方法）
+Date.now()//返回当前的时间，以毫秒为单位
+时间戳：
+时间转换为时间戳
+Date.now();
+(new Date).getTime();
+
+时间戳转换为时间
+new Date(Timestamp)
