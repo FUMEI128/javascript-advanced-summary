@@ -1,0 +1,13 @@
+json
+一，Math
+二，数据交换格式
+三，json
+json的应用是用来进行数据交换的一种格式。
+json本质是字符串。
+常用的json的两个方法：
+1）json.stringify（）将js对象转换为json格式,里面有三个参数，参数一为js对象，参数二为过滤器可以是数组也可以是方法，参数三是缩进字符值最大为10
+2）json.parse（）将json格式变为js对象，第一个参数为json对象，第二个参数为过滤器。
+
+四，json应用
+
+Ajaxdi
